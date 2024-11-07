@@ -1,0 +1,101 @@
+openapi: '3.0.3'
+info:
+  title: Subject Sharing Solution
+  version: '1.0'
+servers:
+  - url: https://subject-solution.local/
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK
+
+  /files:
+    get:
+      tags:
+        - File
+      summary: Get all files abouts
+      responses:
+        '200':
+          description: Files list
+          content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/FileInfo"
+
+    post:
+      tags:
+        - File
+      summary: Upload a file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+
+      responses:
+        '201':
+          description: File uploaded
+
+  /files/{id}:
+    get:
+      tags:
+        - File
+      summary: Download a file
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the file
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File downloaded
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+
+    delete:
+      tags:
+        - File
+      summary: Delete a file
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the file
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File deleted
+
+components:
+  schemas:
+    FileInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "202410251512"
+        name:
+          type: string
+          example: "TD1.pdf"
+        size:
+          type: integer
+          example: 1024
+        uploadDate:
+          type: string
+          format: date
+          example: "2024-10-25 15:12"
