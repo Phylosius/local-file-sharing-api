@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import api.files as files
+import files
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('files/', include('files.urls')),
