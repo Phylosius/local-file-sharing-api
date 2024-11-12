@@ -29,5 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('files/', include('files.urls')),
     path('test/', files.views.test),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
