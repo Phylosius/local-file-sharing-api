@@ -10,3 +10,8 @@ class FileInfo(models.Model):
     name = models.CharField(max_length=255)
     size = models.IntegerField()
     upload_date = models.DateTimeField(default=timezone.now, editable=False)
+
+    class Meta:
+
+        verbose_name = 'File info'
+        verbose_name_plural = 'File infos'
