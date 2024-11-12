@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+
+from files.urls import router as file_router
 
 import files
+
+router = routers.DefaultRouter()
+router.registry.extend(file_router.registry)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('files/', include('files.urls')),
     path('test/', files.views.test),
+    path('', include(router.urls)),
 ]
