@@ -13,6 +13,7 @@ class FileInfoSet(viewsets.ModelViewSet):
     queryset = FileInfo.objects.all()
     serializer_class = FileInfoSerializer
     permission_classes = (IsAuthenticated, )
+    filterset_fields = ['upload_date', 'size']
 
 
 def test(request):
