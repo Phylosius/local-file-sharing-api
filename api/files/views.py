@@ -14,6 +14,7 @@ class FileInfoSet(viewsets.ModelViewSet):
     serializer_class = FileInfoSerializer
     permission_classes = (IsAuthenticated, )
     filterset_fields = ['upload_date', 'size']
+    search_fields = ['name']
 
 
 def test(request):
