@@ -1,0 +1,3 @@
+CREATE USER avocado WITH PASSWORD 'avocadoPOSTGRES0';
+CREATE DATABASE file_api_db;
+ALTER DATABASE file_api_db OWNER TO avocado;
