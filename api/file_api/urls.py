@@ -30,4 +30,5 @@ urlpatterns = [
     path('files/', include('files.urls')),
     path('test/', files.views.test),
     path('api/', include(router.urls)),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
 ]
