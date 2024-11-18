@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dj_rest_auth',
     'django_filters',
+    'corsheaders',
     "files.apps.FilesConfig",
     "accounts.apps.AccountsConfig"
 ]
@@ -48,6 +49,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -134,3 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User model
 AUTH_USER_MODEL = 'accounts.User'
+
+# CORS configuration
+# CORS_ALLOWED_ORIGINS = [
+#     'localhost:5600'
+# ]
+CORS_ORIGIN_ALLOW_ALL = True
