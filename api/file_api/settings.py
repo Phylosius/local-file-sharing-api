@@ -142,3 +142,7 @@ AUTH_USER_MODEL = 'accounts.User'
 #     'localhost:5600'
 # ]
 CORS_ORIGIN_ALLOW_ALL = True
+
+# file
+MEDIA_ROOT = './media/'
+MEDIA_URL = 'media/'
