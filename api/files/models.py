@@ -10,6 +10,7 @@ class FileInfo(models.Model):
     name = models.CharField(max_length=255)
     size = models.IntegerField()
     upload_date = models.DateTimeField(default=timezone.now, editable=False)
+    file = models.FileField(upload_to='public', null=True)
 
     class Meta:
 
