@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'django_filters',
     'corsheaders',
+    'drf_yasg',
     "files.apps.FilesConfig",
-    "accounts.apps.AccountsConfig"
+    "accounts.apps.AccountsConfig",
+    'file_api_doc.apps.FileApiDocConfig'
 ]
 
 REST_FRAMEWORK = {
