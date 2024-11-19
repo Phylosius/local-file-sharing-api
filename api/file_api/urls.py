@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('files/', include('files.urls')),
     path('test/', files.views.test),
-    path('api/', include(router.urls)),
+    path('models/', include(router.urls)),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('doc/', include('file_api_doc.urls')),
 ]
